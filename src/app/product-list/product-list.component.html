@@ -8,12 +8,12 @@ can be found in the LICENSE file at http://angular.io/license
 -->
 
 <!-- ngFor=" let value of values " for loop -->
-<div *ngFor="let product of products">
+<div *ngFor="let product of products; index as productId">
 
   <h3>
     <!-- prperty binding [] -->
     <!-- interpolation {{}} -->
-    <a [title]="product.name + ' details'">
+    <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
       {{ product.name }}
     </a>
   </h3>
